@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicScreenCapture", "DynamicScreenCapture\DynamicScreenCapture.csproj", "{D186B026-FD8B-42B4-8687-79D3FA6FBB78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D186B026-FD8B-42B4-8687-79D3FA6FBB78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D186B026-FD8B-42B4-8687-79D3FA6FBB78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D186B026-FD8B-42B4-8687-79D3FA6FBB78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D186B026-FD8B-42B4-8687-79D3FA6FBB78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85F5EC39-2A3B-4C43-BA57-2EC1E3DF3E40}
+	EndGlobalSection
+EndGlobal
