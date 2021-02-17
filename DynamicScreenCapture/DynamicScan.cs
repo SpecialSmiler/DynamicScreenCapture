@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-
+using System.IO;
 using System.Windows.Forms;
 
 namespace Dynamic_Screen_Capture
@@ -16,9 +16,6 @@ namespace Dynamic_Screen_Capture
         int i = 0;  //列扫描变量
         int step = 2;   //隔行扫描的步长
 
-
-        //随机数生成器
-        Random random = new Random();
         public string SavePath { get; set; } = "D:\\ImageTemp\\";
 
 
@@ -39,11 +36,14 @@ namespace Dynamic_Screen_Capture
         //保存屏幕图像为文件
         private void SaveImage(Bitmap bmp)
         {
+            if (!Directory.Exists(SavePath))
+                Directory.CreateDirectory(SavePath);
+
             string fileName = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss");
             string path = SavePath + fileName + ".bmp";
             bmp.Save(path);
+            
         }
-
 
 
 
@@ -97,17 +97,9 @@ namespace Dynamic_Screen_Capture
         }
 
 
-
-        
-
         //获取变化区域
         private bool GetChangedRegion(Bitmap bmpPre, Bitmap bmpNow, ref Rectangle rect)
         {
-            //int x = random.Next(1600);
-            //int y = random.Next(800);
-
-            //Rectangle changedRegion = new Rectangle(x, y, 800, 600);
-
             //由于截图总是截全屏，所以前后两张bmp的长宽都是一样的。
             int width = bmpNow.Width;
             int height = bmpNow.Height;
@@ -144,8 +136,6 @@ namespace Dynamic_Screen_Capture
                                 p2.X = i;
                             if(iRow > p2.Y)
                                 p2.Y = iRow;
-
-                            
                         }
                     }
                 }
