@@ -15,7 +15,7 @@ namespace Dynamic_Screen_Capture
         public Form1()
         {
             InitializeComponent();
-            textBox1.Text = dynamicScanner.getSavePath();
+            textBox1.Text = dynamicScanner.SavePath;
             numericUpDown1.Value = timeInterval;
         }
 
@@ -70,7 +70,7 @@ namespace Dynamic_Screen_Capture
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            dynamicScanner.DrawChangedRegion();
+            dynamicScanner.RecordScreen();
         }
 
         //修改文件路径
@@ -80,7 +80,7 @@ namespace Dynamic_Screen_Capture
             if(folderBrowserDialog.ShowDialog()==DialogResult.OK)
             {
                 string filePath = folderBrowserDialog.SelectedPath + "\\"; //记得在后面加上斜杠，表示这是一个目录
-                dynamicScanner.setSavePath(filePath);
+                dynamicScanner.SavePath = filePath;
                 textBox1.Text = filePath;
             }
         }
